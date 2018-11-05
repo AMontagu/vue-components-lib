@@ -7,6 +7,11 @@
         <img src="./assets/logo.png"/>
         <p>Wonderfull Logo</p>
       </div>
+
+      <template slot="responses" slot-scope="{ response }">
+        <p v-if="response === 'agree'"> +1</p>
+        <p v-else> -1</p>
+      </template>
       <div slot="footer">
         <button @click="showModal=false" style="background-color: green; color: white">I agree</button>
         <button @click="showModal=false" style="background-color: red; color: white">I disagree</button>

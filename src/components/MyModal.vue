@@ -21,6 +21,11 @@
 	            <slot name="body">
 		            <p>{{ body }}</p>
 	            </slot>
+	            <div v-for="(response, index) in oldResponses" :key="index">
+		            <slot name="responses" :response="response">
+			            {{ response }}
+		            </slot>
+	            </div>
             </div>
 
             <div class="modal-footer">
@@ -56,7 +61,12 @@ export default {
       type: [String, Number],
       default: 9998
     }
-  }
+  },
+	data() {
+  	return {
+		  oldResponses: ["agree", "agree", "agree", "disagree"],
+	  }
+	}
 };
 </script>
 
