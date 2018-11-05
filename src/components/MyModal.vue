@@ -12,15 +12,21 @@
           >
 
             <div class="modal-header">
-              <h2>{{ header }}</h2>
+	            <slot name="header">
+		            <h2>{{ header }}</h2>
+	            </slot>
             </div>
 
             <div class="modal-body">
-              <p>{{ body }}</p>
+	            <slot name="body">
+		            <p>{{ body }}</p>
+	            </slot>
             </div>
 
             <div class="modal-footer">
-              <button @click="$emit('close')">Close</button>
+	            <slot name="footer">
+		            <button @click="$emit('close')">Close</button>
+	            </slot>
             </div>
           </div>
         </div>
@@ -36,11 +42,11 @@ export default {
   props: {
     header: {
       type: String,
-      required: true
+      default: 'Header'
     },
     body: {
       type: String,
-      required: true
+	    default: 'Body text'
     },
     modalWidth: {
       type: String,
