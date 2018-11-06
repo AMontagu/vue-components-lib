@@ -5,7 +5,9 @@ import VueComponentLib from "../../src/index";
 Vue.config.productionTip = false;
 
 Vue.use(VueComponentLib, {
-  headerModal: false
+  MyModal: {
+    headerModal: false
+  }
 });
 
 new Vue({

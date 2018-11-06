@@ -11,7 +11,7 @@
             class="modal-container"
           >
 
-            <div class="modal-header" v-if="$libOptions.headerModal">
+            <div class="modal-header" v-if="typeof $libOptions.MyModal.headerModal !== 'undefined' ? $libOptions.MyModal.headerModal : true">
 	            <slot name="header">
 		            <h2>{{ header }}</h2>
 	            </slot>
@@ -47,11 +47,11 @@ export default {
   props: {
     header: {
       type: String,
-      default: 'Header'
+      default: "Header"
     },
     body: {
       type: String,
-	    default: 'Body text'
+      default: "Body text"
     },
     modalWidth: {
       type: String,
@@ -62,11 +62,11 @@ export default {
       default: 9998
     }
   },
-	data() {
-  	return {
-		  oldResponses: ["agree", "agree", "agree", "disagree"],
-	  }
-	}
+  data() {
+    return {
+      oldResponses: ["agree", "agree", "agree", "disagree"]
+    };
+  }
 };
 </script>
 

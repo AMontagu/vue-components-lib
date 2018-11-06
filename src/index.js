@@ -1,10 +1,13 @@
-import MyModal from "./components/MyModal.vue";
+import * as VueComponentsLibComponents from "./components";
 
 const VueComponentLib = {
   install(Vue, options) {
-    Vue.prototype.$libOptions = options;
-
-    Vue.component(MyModal.name, MyModal);
+    Object.values(VueComponentsLibComponents).forEach(component => {
+      Vue.use(
+        component,
+        options[component.name] ? options[component.name] : {}
+      );
+    });
   }
 };
 
