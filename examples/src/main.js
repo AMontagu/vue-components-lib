@@ -1,13 +1,11 @@
 import Vue from "vue";
 import App from "./App.vue";
-import VueComponentLib from "../../src/index";
+import MyModal from "../../src/components/MyModal";
 
 Vue.config.productionTip = false;
 
-Vue.use(VueComponentLib, {
-  MyModal: {
-    headerModal: false
-  }
+Vue.use(MyModal, {
+  headerModal: false
 });
 
 new Vue({
