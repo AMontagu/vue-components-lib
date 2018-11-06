@@ -4,7 +4,9 @@ import VueComponentLib from "../../src/index";
 
 Vue.config.productionTip = false;
 
-Vue.use(VueComponentLib);
+Vue.use(VueComponentLib, {
+  headerModal: false
+});
 
 new Vue({
   render: h => h(App)

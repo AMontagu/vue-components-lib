@@ -11,7 +11,7 @@
             class="modal-container"
           >
 
-            <div class="modal-header">
+            <div class="modal-header" v-if="$libOptions.headerModal">
 	            <slot name="header">
 		            <h2>{{ header }}</h2>
 	            </slot>
