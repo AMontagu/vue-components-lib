@@ -1,4 +1,5 @@
 import * as VueComponentsLibComponents from "./components";
+import MyStoreModule from "./store/myStoreModule";
 
 const VueComponentLib = {
   install(Vue, options) {
@@ -12,3 +13,4 @@ const VueComponentLib = {
 };
 
 export default VueComponentLib;
+export { VueComponentLib, MyStoreModule };

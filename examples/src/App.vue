@@ -20,6 +20,8 @@
           </div>
         </my-modal>
         <button @click="showModal=true">Show Modal</button>
+        <p>Store value: {{ getMyData }}</p>
+        <button @click="setMyData(getMyData + 1)">Add one</button>
       </div>
     </my-container>
   </div>
@@ -27,6 +29,7 @@
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
+import { mapGetters, mapMutations } from "vuex";
 
 export default {
   name: "app",
@@ -37,6 +40,12 @@ export default {
   },
   components: {
     HelloWorld
+  },
+  computed: {
+    ...mapGetters("MyStoreModule/", ["getMyData"])
+  },
+  methods: {
+    ...mapMutations("MyStoreModule/", ["setMyData"])
   }
 };
 </script>
